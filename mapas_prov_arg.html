@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa de Argentina</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .buscador {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .buscador input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .buscador button, .refresh-button {
+            padding: 10px 15px;
+            background-color: #00796b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        .buscador button:hover, .refresh-button:hover {
+            background-color: #004d40;
+        }
+        .mapa-detalle {
+            border: 2px solid #555;
+            padding: 20px;
+            background-color: #fff;
+            text-align: center;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+        }
+        .volver, .descargar {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #00796b;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .volver:hover, .descargar:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <div class="buscador">
+        <input type="text" id="search" placeholder="Buscar mapa...">
+        <button onclick="searchMap()">Buscar</button>
+        <button class="refresh-button" onclick="refreshSearch()">🔄</button>
+    </div>
+
+    <h1>Mapas de las Provicias Argentinas</h1>
+    
+    <div class="mapa-detalle">
+        <h2>Buenos Aires (Detalle)</h2>
+        <img src="imagenes/Buenos_Aires.jpg" alt="Mapa de Buenos Aires">
+        <p>Este mapa muestra los partidos de la provincia de Buenos Aires.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Buenos_Aires.jpg" download="Buenos_Aires.jpg" class="descargar">Descargar Mapa PNG</a>
+
+        <!-- Botón de descarga -->
+        <a href="imagenes/Buenos_Aires.pdf" download="Buenos_Aires.pdf" class="descargar">Descargar Mapa PDF</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Ciudad de Buenos Aires (Detalle)</h2>
+        <img src="imagenes/Ciudad_BsAs.png" alt="Mapa de la Ciudad de Buenos Aires">
+        <p>Este mapa muestra la Ciudad de Buenos Aires.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Ciudad_BsAs.png" download="Ciudad_BsAs.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Gran Buenos Aires (Detalle)</h2>
+        <img src="imagenes/GBA.png" alt="Mapa del Gran Buenos Aires">
+        <p>Este mapa muestra el Gran de Buenos Aires.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/GBA.pdf" download="GBA.pdf" class="descargar">Descargar Mapa PDF</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Catamarca (Detalle)</h2>
+        <img src="imagenes/Catamarca.png" alt="Mapa de Catamarca">
+        <p>Este mapa muestra los partidos de la provincia de Catamarca.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Catamarca.png" download="Catamarca.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Chaco (Detalle)</h2>
+        <img src="imagenes/Chaco.png" alt="Mapa de Chaco">
+        <p>Este mapa muestra los partidos de la provincia de Chaco.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Chaco.png" download="Chaco.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Chubut (Detalle)</h2>
+        <img src="imagenes/Chubut.png" alt="Mapa de Chubut">
+        <p>Este mapa muestra los partidos de la provincia de Chubut.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Chubut.png" download="Chubut.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Córdoba (Detalle)</h2>
+        <img src="imagenes/Córdoba.png" alt="Mapa de Córdoba">
+        <p>Este mapa muestra los partidos de la provincia de Córdoba.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Córdoba.png" download="Córdoba.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Corrientes (Detalle)</h2>
+        <img src="imagenes/Corrientes.png" alt="Mapa de Corrientes">
+        <p>Este mapa muestra los partidos de la provincia de Corrientes.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Corrientes.png" download="Corrientes.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Entre Ríos (Detalle)</h2>
+        <img src="imagenes/Entre_Ríos.png" alt="Mapa de Entre Ríos">
+        <p>Este mapa muestra los partidos de la provincia de Entre Ríos.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Entre_Ríos.png" download="Entre_Ríos.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Formosa (Detalle)</h2>
+        <img src="imagenes/Formosa.png" alt="Mapa de Formosa">
+        <p>Este mapa muestra los partidos de la provincia de Formosa.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Formosa.png" download="Formosa.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Jujuy (Detalle)</h2>
+        <img src="imagenes/Jujuy.png" alt="Mapa de Jujuy">
+        <p>Este mapa muestra los partidos de la provincia de Jujuy.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Jujuy.png" download="Jujuy.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>La Pampa (Detalle)</h2>
+        <img src="imagenes/La_Pampa.png" alt="Mapa de La Pampa">
+        <p>Este mapa muestra los partidos de la provincia de La Pampa.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/La_Pampa.png" download="La_Pampa.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>La Rioja (Detalle)</h2>
+        <img src="imagenes/La_Rioja.png" alt="Mapa de La Rioja">
+        <p>Este mapa muestra los partidos de la provincia de La Rioja.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/La_Rioja.png" download="La_Rioja.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Mendoza (Detalle)</h2>
+        <img src="imagenes/Mendoza.png" alt="Mapa de Mendoza">
+        <p>Este mapa muestra los partidos de la provincia de Mendoza.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Mendoza.png" download="Mendoza.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Misiones (Detalle)</h2>
+        <img src="imagenes/Misiones.png" alt="Mapa de Misiones">
+        <p>Este mapa muestra los partidos de la provincia de Misiones.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Misiones.png" download="Misiones.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Neuquén (Detalle)</h2>
+        <img src="imagenes/Neuquén.png" alt="Mapa de Neuquén">
+        <p>Este mapa muestra los partidos de la provincia de Neuquén.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Neuquén.png" download="Neuquén.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Río Negro (Detalle)</h2>
+        <img src="imagenes/Río_Negro.jpg" alt="Mapa de Río Negro">
+        <p>Este mapa muestra los partidos de la provincia de Río Negro.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Río_Negro.jpg" download="Río_Negro.jpg" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Salta (Detalle)</h2>
+        <img src="imagenes/Salta.png" alt="Mapa de Salta">
+        <p>Este mapa muestra los partidos de la provincia de Misiones.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Salta.png" download="Salta.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>San Juan (Detalle)</h2>
+        <img src="imagenes/San_Juan.png" alt="Mapa de San Juan">
+        <p>Este mapa muestra los partidos de la provincia de San Juan.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/San_Juan.png" download="San_Juan.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>San Luís (Detalle)</h2>
+        <img src="imagenes/San_Luís.png" alt="Mapa de San Luís">
+        <p>Este mapa muestra los partidos de la provincia de San Luís.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/San_Luís.png" download="San_Luís.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Santa Cruz (Detalle)</h2>
+        <img src="imagenes/Santa_Cruz.png" alt="Mapa de Santa Cruz">
+        <p>Este mapa muestra los partidos de la provincia de Santa Cruz.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Santa_Cruz.png" download="Santa_Cruz.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Santa Fe (Detalle)</h2>
+        <img src="imagenes/Santa_Fe.png" alt="Mapa de Santa Fe">
+        <p>Este mapa muestra los partidos de la provincia de Santa Fe.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Santa_Fe.png" download="Santa_Fe.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Santiago del Estero (Detalle)</h2>
+        <img src="imagenes/Santiago_del_Estero.png" alt="Mapa de Santiago del Estero">
+        <p>Este mapa muestra los partidos de la provincia de Santiago del Estero.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Santiago_del_Estero.png" download="Santiago_del_Estero.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Tierra del Fuego (Detalle)</h2>
+        <img src="imagenes/Tierra_del_Fuego.png" alt="Mapa de Tierra del Fuego">
+        <p>Este mapa muestra los partidos de la provincia de Tierra del Fuego.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Tierra_del_Fuego.png" download="Tierra_del_Fuego.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Tucumán (Detalle)</h2>
+        <img src="imagenes/Tucumán.png" alt="Mapa de Tucumán">
+        <p>Este mapa muestra los partidos de la provincia de Tucumán.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Tucumán.png" download="Tucumán.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Islas Malvinas (Detalle)</h2>
+        <img src="imagenes/Islas_Malvinas.jpg" alt="Mapa de Islas Malvinas">
+        <p>Este mapa muestra las Islas Malvinas.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Islas_Malvinas.jpg" download="Islas_Malvinas.jpg" class="descargar">Descargar Mapa JPG</a>
+
+        <!-- Botón de descarga -->
+        <a href="imagenes/Islas_Malvinas_Político.pdf" download="Islas_Malvinas_Político.pdf" class="descargar">Descargar Mapa PDF</a>
+
+    </div>
+
+    <h1></h1>
+    
+    <div class="mapa-detalle">
+        <h2>Islas Malvinas Físico Políto (Detalle)</h2>
+        <img src="imagenes/Islas_Malvinas2.png" alt="Mapa de Islas Malvinas">
+        <p>Este mapa muestra las Islas Malvinas.</p>
+        
+        <!-- Botón de descarga -->
+        <a href="imagenes/Islas_Malvinas2.png" download="Islas_Malvinas2.png" class="descargar">Descargar Mapa</a>
+    </div>
+
+    <!-- Enlace para volver al menú principal -->
+    <a href="index.html" class="volver">Volver al Catálogo Principal</a>
+
+    <script>
+        function searchMap() {
+            const query = document.getElementById('search').value.toLowerCase();
+            const mapas = document.querySelectorAll('.mapa-detalle');
+            mapas.forEach(mapa => {
+                const title = mapa.querySelector('h2').innerText.toLowerCase();
+                if (title.includes(query)) {
+                    mapa.style.display = 'block';
+                } else {
+                    mapa.style.display = 'none';
+                }
+            });
+        }
+
+        function refreshSearch() {
+            document.getElementById('search').value = '';
+            const mapas = document.querySelectorAll('.mapa-detalle');
+            mapas.forEach(mapa => {
+                mapa.style.display = 'block'; // Muestra todos los mapas nuevamente
+            });
+        }
+    </script>
+</body>
+</html>

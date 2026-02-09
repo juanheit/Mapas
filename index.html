@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio - Catálogo de Mapas Geográficos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0; /* Quitamos el margen del body para que el fondo cubra todo */
+            /* background-color: #e0f7fa;  Ya no es tan necesario con la imagen */
+            text-align: center;
+	
+	    background-image: url('imagenes/Portada.png');
+  	    background-repeat: no-repeat;
+  	    background-size: cover;
+  	    background-position: center;
+  	    background-attachment: fixed;
+        }
+        
+        /* Contenedor para el título y el selector, centrado y con un poco de margen superior */
+        .header-container {
+            padding: 50px 20px 20px 20px; /* Espacio superior generoso */
+        }
+
+        /* ESTILO MEJORADO PARA EL TÍTULO PRINCIPAL */
+        .main-title-box {
+            display: inline-block; /* Permite que el fondo se ajuste al contenido */
+            background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco con 85% de opacidad */
+            padding: 15px 30px;
+            border-radius: 12px; /* Esquinas más redondeadas */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Sombra para darle profundidad */
+            margin-bottom: 20px; /* Espacio entre el título y el selector */
+        }
+
+        h1 {
+            color: #004d40; /* Verde muy oscuro para alto contraste */
+            font-size: 2.8em; /* Texto más grande */
+            margin: 0; /* Aseguramos que no haya margen interno */
+            letter-spacing: 1px;
+        }
+        
+        /* Estilos del menú (los dejamos casi iguales, solo ajustamos el margen superior) */
+        .menu {
+            list-style: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto 40px auto; /* Ajustado el margen superior */
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        .menu li {
+            margin: 10px 0;
+        }
+        .menu a {
+            display: block;
+            padding: 12px 15px;
+            text-decoration: none;
+            color: #006064;
+            background-color: #b2ebf2;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+            font-size: 1.1em;
+        }
+        .menu a:hover {
+            background-color: #00bcd4;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+      <!-- Título Mejorado -->
+      <div class="main-title-box">
+        <h1>Bienvenido al Catálogo de Mapas</h1>
+        <h2 style="margin-top: 10px; color: #004d40;">Selecciona un mapa para visualizar:</h2> <!-- Subtítulo -->
+      </div>
+    </div>
+    
+    <ul class="menu">
+        <li><a href="mapa_africa.html">Mapa de África</a></li>
+        <li><a href="mapa_america_norte.html">Mapa de América del Norte</a></li>
+	<li><a href="mapa_sudamerica.html">Mapa de América del Sur</a></li>
+        <li><a href="mapa_america_politico.html">Mapa de América</a></li>
+        <li><a href="mapa_asia.html">Mapa de Asia</a></li>
+        <li><a href="mapa_europa.html">Mapa de Europa</a></li>
+        <li><a href="mapa_oceania.html">Mapa de Oceanía</a></li>
+        <li><a href="mapa_planisferio.html">Mapa Planisferio</a></li>
+	<li><a href="mapa_argentina.html">Mapa de Argentina</a></li>
+	<li><a href="mapas_prov_arg.html">Mapas de Prov. Argentinas</a></li>
+    </ul>
+
+</body>
+</html>
